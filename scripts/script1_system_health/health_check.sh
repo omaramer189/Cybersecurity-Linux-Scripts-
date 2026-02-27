@@ -5,16 +5,26 @@ echo "==============================="    # echo here prints text, this line of 
 echo "     Report SUMMARY"	              # These three echos print a header for the report to be organized
 echo "==============================="
 
-# Hostname
+# ==============================
+# Hostname Section
+# ==============================
+
 echo "Hostname: $(hostname)"   #  echo here want to print the computer name 
 				               # hostname is a command that returns the computer's name
 			                   # $(hostname) runs that command and inserts its result inside echo
                                # So this line prints the word "Hostname:" followed by the actual machine name
-                    
+
+
+# ==============================
+# Uptime Section
+# ==============================
 echo "Uptime:"      # echo here prints the word Uptime:
 uptime -p           # here shows us how long the system has been running
 		            # -p means here pretty format, so it prints it in a readable way
 
+# ==============================
+# CPU Load Section
+# ==============================
 echo ""                                       # Prints an empty line to make the output easier to read
 echo "CPU Load (1, 5, 15 min averages):"      # Prints a label to explain the numbers that will appear next
 uptime | awk -F'load average:' '{ print $2 }'   
@@ -26,11 +36,17 @@ uptime | awk -F'load average:' '{ print $2 }'
 # which gives us only the CPU load numbers
 
 
+# ==============================
+# Memory Usage Section
+# ==============================
 echo ""                 # Prints an empty line to make the output easier to read
 echo "Memory Usage:"    # Prints a label for memory information.
 free -h					# free shows how much memory is being used
 						# -h means human readable format, like MB, GB, instead of large numbers 
-
+						
+# ==============================
+# Disk Usage Section
+# ==============================
 echo ""  									# Prints an empty line to make the output easier to read 
 echo "Disk Usage:"                          # Prints a label before disk information.
 df -h --total | grep -E 'Filesystem|total'  
@@ -40,6 +56,9 @@ df -h --total | grep -E 'Filesystem|total'
 # grep filters the results and only shows lines that contain -E means either "Filesystem" or "total"
 
 
+# ==============================
+# Top Processes Section
+# ==============================
 echo ""										# Prints an empty line to make the output easier to read
 echo "Top 5 Memory-Consuming Processes:"	# Prints a label before listing processes
 ps aux --sort=-%mem | head -n 6
@@ -47,6 +66,10 @@ ps aux --sort=-%mem | head -n 6
 # --sort=-%mem sorts them by memory usage from highest to lowest
 # head -n 6 shows the first 6 lines
 # One line is the header, and the next five are the top processes
+
+# ==============================
+# End of Report
+# ==============================
 
 echo ""									  # Prints an empty line to make the output easier to read 
 echo "==============================="	  # Prints text, this line of equal signs  to organize the title
