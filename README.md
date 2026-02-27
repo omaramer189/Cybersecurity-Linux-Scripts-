@@ -1,2 +1,2 @@
 # Cybersecurity-Linux-Scripts-
-10 Writing Scripts and know what every line doing . Writing each line do in the script.
+10 Writing Scripts in Linux. Understating each line, what it does in the script.
