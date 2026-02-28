@@ -1,4 +1,4 @@
-#!/bin/bash             # This lien tells the system to run this file using the Bash Shell and without it linux will not know which interpreter to use
+#!/bin/bash             # This line tells the system to run this file using the Bash Shell, and without it, Linux will not know which interpreter to use
                         
 
 echo "==============================="    # echo here prints text, this line of equal signs  to organize the title
