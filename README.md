@@ -1,2 +1,2 @@
-# Cybersecurity-Linux-Scripts-
-10 Writing Scripts in Linux. Understating each line, what it does inside the script.
+# Cybersecurity Linux Scripts
+10 Writing Scripts in Linux. 
